@@ -3,7 +3,7 @@
 def print_1(list_input) -> None:
     """Prints each items of list_input"""
     for item in list_input:
-    print(item)
+        print(item)
 
 # Exercise two
 

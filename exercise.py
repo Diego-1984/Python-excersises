@@ -1,15 +1,19 @@
 # Excercise one
 
+Example_list =[1,2,3,4]
 def print_1(list_input) -> None:
     """Prints each items of list_input"""
     for item in list_input:
         print(item)
+print_1(Example_list)
 
 # Exercise two
 
-def print_2(**kwargs) -> None:
+def print_2(kwargs) -> None:
     """Prints kwargs with the help of f-strings"""
-    pass
+    print(f'I am doing a small test with the languaje {kwargs}.')
+   
+print_2("Python")
 
 # Exercise three
 
@@ -20,24 +24,62 @@ def get_fibonacci_sequence(n):
         - add input checks for n or make function more robust
         - add typing
     """
-    pass
+    if n < 2:
+        return n
+    else:
+        return (n-1) + (n-2)
+
+print(get_fibonacci_sequence(15))
 
 # Exercise four. Check if number is fibonacci return true or false
 
 def is_fibonacci(number):
-    # add typing
-    # add input checks
-    pass
+    if number < 0:
+        return False
+    a = 0
+    b = 1
+    while b < number:
+        a = b
+        b = a + b        
+    return b == number
+
+# Examples
+
+print(is_fibonacci(5))
+print(is_fibonacci(8))
+print(is_fibonacci(9))
 
 # Exercise five. Implement Rectangle with two meaningful methods
 
 class Rectangle:
-    pass
+    def print_rectangle(width, height):
+        for i in range(height):
+            for j in range(width):
+                if i == 0 or i == height - 1 or j == 0 or j == width - 1:
+                    print("*", end="")
+                else:
+                    print(" ", end="")
+            print()
+
+# Example
+Rectangle.print_rectangle(7, 3)
+
+
 
 # Exercise six. Implement Square as you seem fit
 
 class Square:
-    pass
+    def print_square(size):
+        for i in range(size):
+            for j in range(size):
+                if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+                    print(" * ", end="")
+                else:
+                    print("   ", end="")
+            print()
+
+# Example
+Square.print_square(5)
 
 # Exercise seven. 
 

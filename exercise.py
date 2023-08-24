@@ -81,7 +81,7 @@ class Square:
 # Example
 Square.print_square(5)
 
-# Exercise seven. 
+# Exercise seven. (EXPLICAR HANS)
 
 def split_str(inp):
     """
@@ -102,7 +102,7 @@ def split_str(inp):
     """
     pass
 
-# Exercise eight
+# Exercise eight (EXPLICAR HANS)
 
 def concat_list_items(*args):
     """
@@ -117,17 +117,34 @@ def concat_list_items(*args):
     - implement the general functionality
     - add the check of the input values
     """
-    pass
+    list_A = [1,2]
+    list_B = ["A", "B"]
+    list_C = ["-", "/"]
+    
 
 # Exercise nine
 
 def get_only_item(iterable):
+
     """
     Returns the first and ONLY value of an iterable
     - implement method
     - comment on why it is difficult to accept all kinds of iterables
     """
-    pass
+    items = list(iterable)
+    
+    if len(items) != 1:
+        return "Iterable must contain exactly one item."
+    
+    return items[0]
+
+# Example
+print(get_only_item("Diego"))
+
+# Some reasons that is dificult to accept all the iterables are memory problems and infinite loops. 
+# It´s important to say that numbers are not iterables
+
+   
 
 # Exercise ten
 
@@ -144,6 +161,8 @@ def return_time_wb(dt_obj):
     Accepts a datetime object and returns a string representation of it. The
     returned string will be used to display the date and time on a webpage.
     """
+
+# Exercise twelve
 
 if __name__ == "__main__":
     print("\n\nImplement your demos hereafter\n\n")

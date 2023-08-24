@@ -5,6 +5,8 @@ def print_1(list_input) -> None:
     """Prints each items of list_input"""
     for item in list_input:
         print(item)
+
+# Exercise one test
 print_1(Example_list)
 
 # Exercise two
@@ -12,6 +14,8 @@ print_1(Example_list)
 def print_2(kwargs) -> None:
     """Prints kwargs with the help of f-strings"""
     print(f'I am doing a small test with the languaje {kwargs}.')
+
+# Excercise two test
    
 print_2("Python")
 
@@ -29,6 +33,8 @@ def get_fibonacci_sequence(n):
     else:
         return (n-1) + (n-2)
 
+# Exercise three test
+
 print(get_fibonacci_sequence(15))
 
 # Exercise four. Check if number is fibonacci return true or false
@@ -43,7 +49,7 @@ def is_fibonacci(number):
         b = a + b        
     return b == number
 
-# Examples
+# Exercise four test
 
 print(is_fibonacci(5))
 print(is_fibonacci(8))
@@ -61,10 +67,9 @@ class Rectangle:
                     print(" ", end="")
             print()
 
-# Example
+# Exercise five test
+
 Rectangle.print_rectangle(7, 3)
-
-
 
 # Exercise six. Implement Square as you seem fit
 
@@ -78,7 +83,8 @@ class Square:
                     print("   ", end="")
             print()
 
-# Example
+# Exercise six test
+
 Square.print_square(5)
 
 # Exercise seven. (EXPLICAR HANS)
@@ -117,9 +123,19 @@ def concat_list_items(*args):
     - implement the general functionality
     - add the check of the input values
     """
-    list_A = [1,2]
-    list_B = ["A", "B"]
-    list_C = ["-", "/"]
+    primary_list = [1, 2]
+    secondary_list = ["A", "B"]
+    def get_tree_list(primary_list, secondary_list):
+        get_tree_list_result = []
+        for primary_list_item in primary_list:
+            for secondary_list_item in secondary_list:
+                get_tree_list_result.append(f"{primary_list_item}{secondary_list_item}")
+        return get_tree_list_result
+    for list_index in range(len(args) - 1):
+        result = get_tree_list(result, args[list_index + 1])
+    return result
+
+# Exercise eight test
     
 
 # Exercise nine
@@ -138,23 +154,30 @@ def get_only_item(iterable):
     
     return items[0]
 
-# Example
+# Exercise nine test
+
 print(get_only_item("Diego"))
 
 # Some reasons that is dificult to accept all the iterables are memory problems and infinite loops. 
 # It´s important to say that numbers are not iterables
 
-   
-
-# Exercise ten
+# Exercise ten (Explicar Hans)
 
 def return_time_db(dt_obj):
     """
     Accepts a datetime object and returns a string representation of it. The
     returned string will be used to store the date and time within a database.
     """
+    return dt_obj.strftime("%Y-%m-%d %H:%M:%S")
 
-# Exercise eleven
+# Excercise ten test
+
+import datetime
+dt_obj = datetime.datetime(2023, 8, 24, 15, 30, 0)
+db_string = return_time_db(dt_obj)
+print(db_string)
+  
+# Exercise eleven (Explicar Hans)
 
 def return_time_wb(dt_obj):
     """
@@ -162,7 +185,8 @@ def return_time_wb(dt_obj):
     returned string will be used to display the date and time on a webpage.
     """
 
-# Exercise twelve
+
+# (Explicar Hans)
 
 if __name__ == "__main__":
     print("\n\nImplement your demos hereafter\n\n")

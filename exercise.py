@@ -112,9 +112,9 @@ def split_str(inp: str):
     search_result = re.search("^(\d{1,3})(CC|RR)(\d{0,2})$", inp)
     prefix = search_result.group(1)
     base = search_result.group(2)
-    if (prefix is None) or (base is None):
-        return "outside of scope"
     suffix = search_result.group(3)
+    if (prefix is None) or (base is None):
+        return "outside of scope"    
     return (prefix, base, suffix)
 
 # Execercise 8
@@ -199,18 +199,26 @@ if __name__ == "__main__":
     rectangle = Rectangle(10, 20)
     print(rectangle)
 
-    # example Rectangle class
+    # example Square class
     square = Square(10)
     print(square)
+
+    # example exercise 7
 
     print(split_str("111CC1"))
 
     # example return a list concatenate
     print(concat_list_items([1, 2], ["A", "B"], ["#", "."]))
 
+    # example execise 9
+
     print(get_only_item(['ab', 'cd', 'ef']))
 
+    # data time exercise 10
+
     print(return_time_db(datetime.datetime.utcnow()))
+
+    # data time exercise 11
 
     print(return_time_wb(datetime.datetime.utcnow()))
 #
